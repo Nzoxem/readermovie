@@ -1,0 +1,37 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item><image src="{{simagePath[0]}}"></image></swiper-item>
+    <swiper-item><image src="{{simagePath[1]}}"></image></swiper-item>
+    <swiper-item><image src="{{simagePath[2]}}"></image></swiper-item>
+  </swiper>
+  <view class="postContainer">
+    <view class="userHead" >
+      <image class="headImg" src="{{himagePath[0]}}"></image>
+      <text class="userTime">{{date[0]}}</text>
+    </view>
+    <text class="postTitle">{{title[0]}}</text>
+    <image class="postImg" src="{{simagePath[0]}}"></image>
+    <text class="postContent">{{description[0]}}</text>
+    <view class="postInfo">
+      <image class="save"src="{{iconPath[0]}}"></image>
+      <text class="num">112</text>
+      <image class="save"src="{{iconPath[1]}}"></image>
+      <text class="num">300</text>
+    </view>
+  </view>
+   <view class="postContainer">
+    <view class="userHead" >
+      <image class="headImg" src="{{himagePath[1]}}"></image>
+      <text class="userTime">{{date[1]}}</text>
+    </view>
+    <text class="postTitle">{{title[1]}}</text>
+    <image class="postImg" src="{{simagePath[1]}}"></image>
+    <text class="postContent">{{description[1]}}</text>
+    <view class="postInfo">
+      <image class="save"src="{{iconPath[0]}}"></image>
+      <text class="num">87</text>
+      <image class="save"src="{{iconPath[1]}}"></image>
+      <text class="num">100</text>
+    </view>
+  </view>
+</view>
