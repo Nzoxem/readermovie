@@ -1,7 +1,7 @@
 <view class="container">
   <image class="head" src="/images/bg1.jpg"></image>
   <text class="userName"><text style="color:#405f80">Hello</text>，eris</text>
-  <view class="motoContainer">
+  <view class="motoContainer" bindtap="onTap">
     <text class="moto">开启小程序之旅</text>
   </view>
 </view>
