@@ -1,0 +1,18 @@
+<!--template模板使用-->
+<template name="postItem">
+  <view class="postContainer">
+    <view class="userHead">
+      <image class="headImg" src="{{item.himagePath}}"></image>
+      <text class="userTime">{{item.date}}</text>
+    </view>
+    <text class="postTitle">{{item.title}}</text>
+    <image class="postImg" src="{{item.simage}}"></image>
+    <text class="postContent">{{item.description}}</text>
+    <view class="postInfo">
+      <image class="save" src="{{item.iconPath[0]}}"></image>
+      <text class="num">112</text>
+      <image class="save" src="{{item.iconPath[1]}}"></image>
+      <text class="num">300</text>
+    </view>
+  </view>
+</template>

@@ -1,3 +1,4 @@
+<import src="post-item/pi-template.wxml"/>
 <view>
   <swiper indicator-dots="true" autoplay="true">
     <swiper-item><image src="{{simagePath[0]}}"></image></swiper-item>
@@ -5,20 +6,7 @@
     <swiper-item><image src="{{simagePath[2]}}"></image></swiper-item>
   </swiper>
   <block wx:for="{{post_key}}" wx:for-item="item">
-    <view class="postContainer">
-      <view class="userHead" >
-        <image class="headImg" src="{{item.himagePath}}"></image>
-        <text class="userTime">{{item.date}}</text>
-      </view>
-      <text class="postTitle">{{item.title}}</text>
-      <image class="postImg" src="{{item.simage}}"></image>
-      <text class="postContent">{{item.description}}</text>
-      <view class="postInfo">
-        <image class="save"src="{{item.iconPath[0]}}"></image>
-        <text class="num">112</text>
-        <image class="save"src="{{item.iconPath[1]}}"></image>
-        <text class="num">300</text>
-      </view>
-    </view>
+  <!--使用template模板-->
+    <template is="postItem" data="{{item}}"/>
   </block>
 </view>

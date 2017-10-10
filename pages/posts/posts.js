@@ -1,4 +1,4 @@
-var postData = require('../../data/postData.js')
+var postData = require('../../data/postData.js');
 Page({
 
   /**
