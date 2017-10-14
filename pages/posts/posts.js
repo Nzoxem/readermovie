@@ -7,9 +7,19 @@ Page({
   data: {
     simagePath: ["/images/s1.jpg", "/images/s2.jpg", "/images/s3.jpg"],
     post_key: [
+
     ]
   },
+  onPostTap: function (event) {
+    //获取每一个post模块的id
+    var postId = event.currentTarget.dataset.postid;
+    //子页面所以用navigateTo
+    wx.navigateTo({
+      url: "post-detail/post-detail"
+    })
+    //console.log("this is postId: " + postId);
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

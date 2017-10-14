@@ -10,9 +10,9 @@
     <text class="postContent">{{item.description}}</text>
     <view class="postInfo">
       <image class="save" src="{{item.iconPath[0]}}"></image>
-      <text class="num">112</text>
+      <text class="num">{{item.savenum}}</text>
       <image class="save" src="{{item.iconPath[1]}}"></image>
-      <text class="num">300</text>
+      <text class="num">{{item.looknum}}</text>
     </view>
   </view>
 </template>
