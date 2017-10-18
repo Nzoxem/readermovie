@@ -15,7 +15,7 @@ Page({
     var postId = event.currentTarget.dataset.postid;
     //子页面所以用navigateTo
     wx.navigateTo({
-      url: "post-detail/post-detail"
+      url: "post-detail/post-detail?id="+postId
     })
     //console.log("this is postId: " + postId);
 

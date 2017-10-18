@@ -2,41 +2,58 @@
   display: flex;
   flex-direction: column;
 }
+
 .top {
   width: 100%;
   height: 500rpx;
 }
-.userHead{
+
+.music {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -50rpx;
+  top: 180rpx;
+  opacity: 0.3;
+}
+
+.userHead {
   flex-direction: row;
   margin-left: 30rpx;
   margin-top: 20rpx;
 }
-.headImg{
-  border-radius:50%;
-  overflow:hidden;
-  width:60rpx;
+
+.headImg {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60rpx;
   height: 60rpx;
   vertical-align: middle;
-} 
-.userName{
+}
+
+.userName {
   font-size: 30rpx;
   font-weight: 300;
   margin-left: 20rpx;
   vertical-align: middle;
   color: #666;
 }
-.constText{
+
+.constText {
   font-size: 24rpx;
   color: #999;
   margin-left: 20rpx;
 }
-.userTime{
+
+.userTime {
   margin-left: 30rpx;
   vertical-align: middle;
   font-size: 24rpx;
   color: #999;
 }
-.detailTitle{
+
+.detailTitle {
   font-size: 36rpx;
   font-weight: 700;
   color: #333;
@@ -44,22 +61,27 @@
   margin-left: 30rpx;
   letter-spacing: 2px;
 }
-.detailOp{
+
+.detailOp {
   margin-top: 20rpx;
 }
-.opimg{
+
+.opimg {
   float: right;
   margin-right: 40rpx;
   vertical-align: middle;
 }
-.opimg Image{
+
+.opimg Image {
   width: 90rpx;
   height: 90rpx;
 }
-.shareImg{
+
+.shareImg {
   margin-left: 30rpx;
 }
-.horizon{
+
+.horizon {
   width: 100%;
   height: 1px;
   background-color: #e5e5e5;
@@ -69,7 +91,8 @@
   margin: 0 auto;
   z-index: -99;
 }
-.detail{
+
+.detail {
   color: #666;
   margin-left: 30rpx;
   margin-top: 20rpx;
