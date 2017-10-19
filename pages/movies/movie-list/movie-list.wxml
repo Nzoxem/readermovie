@@ -1,0 +1,15 @@
+<import src="../movie/movie-tmp.wxml"/>
+<template name="movielist">
+  <view>
+    <view>
+      <text>正在热映</text>
+      <view>
+        <text>更多</text>
+        <image src="/images/right.png"></image>
+      </view>
+    </view>
+    <template is="movie-tmp"/>
+    <template is="movie-tmp"/>
+    <template is="movie-tmp"/>
+  </view>
+</template>
