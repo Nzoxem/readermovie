@@ -1,10 +1,12 @@
 <template name="stars">
-  <view>
-    <image src="/images/sstar.png"></image>
-    <image src="/images/sstar.png"></image>
-    <image src="/images/sstar.png"></image>
-    <image src="/images/sstar.png"></image>
-    <image src="/images/sstar.png"></image>
-    <text>8</text>
+  <view class="stars-cont">
+    <view class="stars">
+      <image src="/images/sstar.png"></image>
+      <image src="/images/sstar.png"></image>
+      <image src="/images/sstar.png"></image>
+      <image src="/images/sstar.png"></image>
+      <image src="/images/sstar.png"></image>
+    </view>
+    <text class="starscore">8.2</text>
   </view>
 </template>

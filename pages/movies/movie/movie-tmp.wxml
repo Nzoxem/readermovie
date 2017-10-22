@@ -1,8 +1,8 @@
 <import src="../star/star-tmp.wxml"/>
 <template name="movie-tmp">
-  <view>
-    <image src="/images/h1.jpg"></image>
-    <text>V字仇杀队</text>
+  <view class="movie-cont">
+    <image class="movieimg" src="/images/h1.jpg"></image>
+    <text class="movietitle">V字仇杀队</text>
     <template is="stars"/>
   </view>
 </template>
