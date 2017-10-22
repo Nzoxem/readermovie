@@ -1,1 +1,7 @@
 @import "movie-list/movie-list.wxss";
+.moviesback{
+  background-color: #f2f2f2;
+}
+.movielistmp{
+  margin-bottom: 30rpx;
+}
