@@ -1,13 +1,20 @@
 <import src="movie-list/movie-list.wxml" />
+<view class="search">
+  <icon type="search" class="searchimg" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="王牌特工2、天才枪手"
+  placeholder-class="placeholder" bindfocus="onBindFocus"
+  bindchange="onBindChange"/>
+</view>
 <view class="moviesback">
   <view class="movielistmp">
-    <template is="movielist" data="{{movies}}" />
+    <!-- ...是将对象展开 -->
+    <template is="movielist" data="{{...inTheaters}}" />
   </view>
   <view class="movielistmp">
-    <template is="movielist" />
+    <template is="movielist" data="{{...comingSoon}}" />
   </view>
   <view class="movielistmp">
-    <template is="movielist" />
+    <template is="movielist" data="{{...top250}}" />
   </view>
 
 </view>

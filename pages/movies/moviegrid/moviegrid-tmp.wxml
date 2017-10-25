@@ -1,0 +1,11 @@
+<import src="../movie/movie-tmp.wxml" />
+<template name="mgridtmp">
+  <!-- 使用scroll-view设置下拉刷新事件 需要给竖直Y方向高度-->
+  <scroll-view class="gird-cont" bindscrolltolower="onScrollLower" scroll-x="false" scroll-y="true">
+    <block wx:for="{{movies}}" wx:for-item="movie">
+      <view class="singlem">
+        <template is="movie-tmp" data="{{...movie}}" />
+      </view>
+    </block>
+  </scroll-view>
+</template>

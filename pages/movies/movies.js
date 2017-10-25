@@ -1,3 +1,4 @@
+var util = require("../../utils/util.js");
 //获取全局变量
 var app = getApp();
 // pages/movies/movies.js
@@ -7,9 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    "inTheaters":{},
+    "comingSoon":{},
+    "top250":{}
   },
 
+  onMoreTap:function(event){
+    var category =event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: "more/more?category="+category
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -17,12 +26,12 @@ Page({
     var top250 = app.globalData.douban + "/v2/movie/top250" + "?start=0&count=3";
     var in_theaters = app.globalData.douban + "/v2/movie/in_theaters" + "?start=0&count=3";
     var coming_soon = app.globalData.douban + "/v2/movie/coming_soon" + "?start=0&count=3";
-    // this.onGetMovieInfo(top250);
-    this.onGetMovieInfo(in_theaters);
-    // this.onGetMovieInfo(coming_soon);
+    this.onGetMovieInfo(in_theaters,"inTheaters","正在热映");
+    this.onGetMovieInfo(coming_soon,"comingSoon","即将上映");
+    this.onGetMovieInfo(top250,"top250","豆瓣TOP250");
   },
   //从豆瓣获取数据
-  onGetMovieInfo(urlName) {
+  onGetMovieInfo(urlName,setKey,cateTitle) {
     var that = this;
     wx.request({
       url: urlName,
@@ -32,7 +41,8 @@ Page({
         "Content-Type": "application/xml"
       },
       success: function (res) {
-        that.onDealData(res.data);
+        that.onDealData(res.data, setKey,cateTitle);
+        // console.log(res);
       },
       fail: function (res) {
 
@@ -43,26 +53,29 @@ Page({
     })
   },
   //处理数据
-  onDealData:function(douData){
-    var movieData=[];
-    for(var idx in douData.subjects){
-      var subject=douData.subjects[idx];
-      var title=subject.title;
-      if(title.length>=6){
-        title=title.substring(0,6)+"...";
+  onDealData: function (douData, setKey, cateTitle) {
+    var movieData = [];
+    for (var idx in douData.subjects) {
+      var subject = douData.subjects[idx];
+      var title = subject.title;
+      if (title.length >= 6) {
+        title = title.substring(0, 6) + "...";
       }
-      var temp={
-        title:title,
-        average:subject.rating.average,
-        movieimg:subject.images.large,
-        movieid:subject.id
+      var temp = {
+        stars: util.transStars(subject.rating.stars),
+        title: title,
+        average: subject.rating.average,
+        movieimg: subject.images.large,
+        movieid: subject.id,
       }
       movieData.push(temp);
-      console.log(movieData);
     }
-    this.setData({
+    var tempData={};
+    tempData[setKey]={
+      cateTitle: cateTitle,
       movies:movieData
-    });
+    };
+    this.setData(tempData);
   },
 
 
