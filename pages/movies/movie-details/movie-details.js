@@ -8,7 +8,14 @@ Page({
   data: {
     movie: {}
   },
-
+  //图片预览
+  onView: function (event) {
+    var src = event.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,13 +26,13 @@ Page({
   },
   onDetailData: function (data) {
     console.log(data);
-    if(!data){
+    if (!data) {
       return;
     }
     var director = {
       avatar: "",
       name: "",
-      id: "" 
+      id: ""
     };
     if (data.directors[0] != null) {
       if (data.directors[0].avatars != null) {

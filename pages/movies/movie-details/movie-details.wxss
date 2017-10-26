@@ -90,6 +90,9 @@
   margin-top: 50rpx;
   margin-left: 40rpx;
 }
+.syfont{
+  color: #999;
+}
 .summary-cont{
   margin-top: 20rpx;
   margin-left: 40rpx;
@@ -118,6 +121,7 @@
   margin-right: 40rpx;
   width: 170rpx;
   text-align: center;
+  /* 超出时换行 */
   white-space: normal;
 }
 .castimg{
