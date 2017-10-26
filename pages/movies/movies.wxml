@@ -1,11 +1,11 @@
 <import src="movie-list/movie-list.wxml" />
+<import src="moviegrid/moviegrid-tmp.wxml" />
 <view class="search">
   <icon type="search" class="searchimg" size="13" color="#405f80"></icon>
-  <input type="text" placeholder="王牌特工2、天才枪手"
-  placeholder-class="placeholder" bindfocus="onBindFocus"
-  bindchange="onBindChange"/>
+  <input type="text" placeholder="王牌特工2、天才枪手" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur" />
+  <image wx:if="{{showSearch}}" src="/images/x.png" class="ximg" catchtap="onXTap"></image>
 </view>
-<view class="moviesback">
+<view wx:if="{{showCont}}" class="moviesback">
   <view class="movielistmp">
     <!-- ...是将对象展开 -->
     <template is="movielist" data="{{...inTheaters}}" />
@@ -16,5 +16,7 @@
   <view class="movielistmp">
     <template is="movielist" data="{{...top250}}" />
   </view>
-
+</view>
+<view wx:if="{{showSearch}}" class="search-pannel">
+  <template is="mgridtmp" data="{{...searchResult}}"/>
 </view>

@@ -1,4 +1,4 @@
 <import src="../moviegrid/moviegrid-tmp.wxml" />
-<view>
+<view catchtap="onDetailTap">
   <template is="mgridtmp" data="{{movies}}" />
 </view>

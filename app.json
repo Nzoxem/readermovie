@@ -17,14 +17,14 @@
       {
         "pagePath": "pages/posts/posts",
         "text": "文字",
-        "iconPath": "/images/novel0.png",
-        "selectedIconPath": "/images/novel.png"
+        "iconPath": "images/novel0.png",
+        "selectedIconPath": "images/novel.png"
       },
       {
         "pagePath": "pages/movies/movies",
         "text": "电影",
-        "iconPath": "/images/film0.png",
-        "selectedIconPath": "/images/film.png"
+        "iconPath": "images/film0.png",
+        "selectedIconPath": "images/film.png"
       }
     ]
   }

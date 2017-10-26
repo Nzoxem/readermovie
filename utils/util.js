@@ -35,7 +35,27 @@ function http(httpUrl,callback){
     }
   })
 }
+function convertTocastInfos(casts){
+  var castArr=[];
+  for(var idx in casts){
+    var cast={
+      img: casts[idx].avatars ? casts[idx].avatars.large:"",
+      name:casts[idx].name
+    }
+    castArr.push(cast);
+  }
+  return castArr;
+}
+function convertToCastString(casts){
+  var castjson="";
+  for(var idx in casts){
+    castjson=castjson+casts[idx].name+"/";
+  }
+  return castjson.substring(0,castjson.length-2);
+}
 module.exports = {
   transStars:transStars,
-  http:http
+  http:http,
+  convertTocastInfos: convertTocastInfos,
+  convertToCastString: convertToCastString
 }

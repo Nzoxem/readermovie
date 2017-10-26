@@ -10,9 +10,43 @@ Page({
   data: {
     "inTheaters":{},
     "comingSoon":{},
-    "top250":{}
+    "top250":{},
+    "searchResult":{},
+    "showCont":true,
+    "showSearch":false
+  },
+  //跳转电影详情页面
+  onDetailTap:function(event){
+    var movieId = event.currentTarget.dataset.movieid;
+    console.log(movieId);
+    wx.navigateTo({
+      url: "movie-details/movie-details?id="+movieId,
+    })
   },
 
+  //搜索框获取焦点响应
+  onBindFocus:function(event){
+    console.log("bind");
+    this.setData({
+      showCont:false,
+      showSearch:true
+    });
+  },
+  //取消按钮响应
+  onXTap:function(event){
+    this.setData({
+      showCont: true,
+      showSearch: false,
+      searchResult:{}
+    });
+  },
+  //设置搜索响应 使用回车或者将鼠标移出触发 
+  onBindBlur:function(event){
+    //获取搜索框内的文本
+    var text=event.detail.value;
+    var SearchUrl = app.globalData.douban +"/v2/movie/search?q="+text;
+    this.onGetMovieInfo(SearchUrl,"searchResult","");
+  },
   onMoreTap:function(event){
     var category =event.currentTarget.dataset.category;
     wx.navigateTo({
